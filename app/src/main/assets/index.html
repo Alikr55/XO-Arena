@@ -1279,6 +1279,4540 @@ button:active{
 }
 
 </style>
+<style>
+/* ===== XO ARENA SPLASH ===== */
+#xoSplash {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #050509;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity .8s ease, visibility .8s ease;
+}
+
+#xoSplash.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.splash-content {
+    width: 100%;
+    text-align: center;
+    animation: splashEnter 1s ease both;
+}
+
+.splash-xo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.splash-symbol {
+    font-size: 85px;
+    font-weight: 900;
+    line-height: 1;
+    position: relative;
+    animation: symbolFloat 2s ease-in-out infinite;
+}
+
+.splash-x {
+    color: #4da6ff;
+    text-shadow:
+        0 0 10px #4da6ff,
+        0 0 30px #4da6ff,
+        0 0 60px rgba(77,166,255,.7);
+}
+
+.splash-o {
+    color: #ff4d8d;
+    text-shadow:
+        0 0 10px #ff4d8d,
+        0 0 30px #ff4d8d,
+        0 0 60px rgba(255,77,141,.7);
+    animation-delay: .3s;
+}
+
+.splash-title {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 6px;
+    color: #fff;
+    margin-bottom: 28px;
+    text-shadow: 0 0 20px rgba(255,255,255,.35);
+}
+
+.splash-loading {
+    width: 180px;
+    height: 4px;
+    margin: auto;
+    background: rgba(255,255,255,.12);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.splash-loading-bar {
+    width: 0%;
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg,#4da6ff,#ff4d8d);
+    box-shadow: 0 0 15px rgba(120,150,255,.8);
+    animation: splashLoading 3.6s ease forwards;
+}
+
+.splash-text {
+    margin-top: 12px;
+    color: rgba(255,255,255,.55);
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+@keyframes splashLoading {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+@keyframes splashEnter {
+    from {
+        opacity: 0;
+        transform: scale(.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes symbolFloat {
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+   </style>
+</head>
+
+<body>
+<!-- XO ARENA SPLASH -->
+<div id="xoSplash">
+    <div class="splash-content">
+
+        <div class="splash-xo">
+            <div class="splash-symbol splash-x">X</div>
+            <div class="splash-symbol splash-o">O</div>
+        </div>
+
+        <div class="splash-title">
+            XO ARENA
+        </div>
+
+        <div class="splash-loading">
+            <div class="splash-loading-bar"></div>
+        </div>
+
+        <div class="splash-text">
+            LOADING...
+        </div>
+
+    </div>
+</div>
+<div class="app">
+
+<!-- =========================================================
+     HOME
+========================================================= -->
+
+<div class="home-screen" id="homeScreen">
+
+    <div class="logo">
+        <div class="logo-x">X</div>
+        <div class="logo-o">O</div>
+    </div>
+
+    <h1>XO ARENA</h1>
+
+    <p class="subtitle">
+        آماده‌ای برای رقابت؟ 🎮
+    </p>
+
+    <div class="menu">
+
+        <button class="menu-btn primary" id="twoPlayerBtn">
+            <span>👥</span>
+            <div>
+                <strong>دو نفره</strong>
+                <small>بازی با دوستت</small>
+            </div>
+        </button>
+
+        <button class="menu-btn" id="computerBtn">
+            <span>🤖</span>
+            <div>
+                <strong>بازی با کامپیوتر</strong>
+                <small>با هوش مصنوعی رقابت کن</small>
+            </div>
+        </button>
+
+        <button class="menu-btn" id="speedBtn">
+            <span>⚡</span>
+            <div>
+                <strong>حالت سرعتی</strong>
+                <small>زمان محدود برای هر حرکت</small>
+            </div>
+        </button>
+
+        <button class="menu-btn" id="profileBtn">
+            <span>👤</span>
+            <div>
+                <strong>پروفایل بازیکنان</strong>
+                <small>اسم و آواتار دو نفره</small>
+            </div>
+        </button>
+
+        <button class="menu-btn" id="statsBtn">
+            <span>🏆</span>
+            <div>
+                <strong>آمار و دستاوردها</strong>
+                <small>رکوردها و افتخارات</small>
+            </div>
+        </button>
+
+        <button class="menu-btn" id="settingsBtn">
+            <span>⚙️</span>
+            <div>
+                <strong>تنظیمات</strong>
+                <small>شخصی‌سازی بازی</small>
+            </div>
+        </button>
+
+    </div>
+
+    <div class="version">
+        XO ARENA • v3.0
+    </div>
+
+</div>
+
+<!-- =========================================================
+     CREATOR
+========================================================= -->
+
+<a
+    class="creator-box"
+    href="https://www.coffeebede.com/alikarimi"
+    target="_blank"
+    rel="noopener"
+>
+
+    <span class="creator-label">
+        SUPPORT
+    </span>
+
+    <span class="creator-name">
+        ALI
+    </span>
+
+</a>
+
+<!-- =========================================================
+     GAME
+========================================================= -->
+
+<div class="game" id="gameScreen">
+
+    <div class="game-header">
+
+        <button
+            class="back-button"
+            id="backToMenuBtn"
+        >
+            🏠 منو
+        </button>
+
+        <div class="game-title">
+            XO
+        </div>
+
+        <div style="width:58px;"></div>
+
+    </div>
+
+    <div class="players">
+
+        <div
+            class="player-card player-x active"
+            id="playerXCard"
+        >
+
+            <div
+                class="player-avatar"
+                id="playerXAvatar"
+            >
+                ❌
+            </div>
+
+            <div class="player-info">
+
+                <strong id="playerXName">
+                    بازیکن X
+                </strong>
+
+                <small>X</small>
+
+            </div>
+
+            <div class="player-crown">
+                👑
+            </div>
+
+        </div>
+
+        <div class="vs">
+            VS
+        </div>
+
+        <div
+            class="player-card player-o"
+            id="playerOCard"
+        >
+
+            <div
+                class="player-avatar"
+                id="playerOAvatar"
+            >
+                ⭕
+            </div>
+
+            <div class="player-info">
+
+                <strong id="playerOName">
+                    بازیکن O
+                </strong>
+
+                <small>O</small>
+
+            </div>
+
+            <div class="player-crown">
+                👑
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="speed-info"
+        id="speedInfo"
+        style="display:none;"
+    >
+
+        <div
+            class="speed-timer"
+            id="speedTimer"
+        >
+            10
+        </div>
+
+        <div class="speed-label">
+            ثانیه باقی‌مانده برای حرکت
+        </div>
+
+    </div>
+
+    <div class="status" id="statusText">
+        نوبت X
+    </div>
+
+    <div class="scoreboard">
+
+        <div class="score">
+            <span>❌ X</span>
+            <strong id="scoreX">0</strong>
+        </div>
+
+        <div class="score">
+            <span>🤝 مساوی</span>
+            <strong id="scoreDraw">0</strong>
+        </div>
+
+        <div class="score">
+            <span>⭕ O</span>
+            <strong id="scoreO">0</strong>
+        </div>
+
+    </div>
+
+    <div class="board" id="board">
+
+        <button class="cell"></button>
+        <button class="cell"></button>
+        <button class="cell"></button>
+
+        <button class="cell"></button>
+        <button class="cell"></button>
+        <button class="cell"></button>
+
+        <button class="cell"></button>
+        <button class="cell"></button>
+        <button class="cell"></button>
+
+    </div>
+
+    <button class="restart" id="restartButton">
+        🔄 بازی مجدد
+    </button>
+
+    <button class="reset-score" id="resetScoreButton">
+        🗑️ صفر کردن امتیازها
+    </button>
+
+</div>
+
+<!-- =========================================================
+     RESULT
+========================================================= -->
+
+<div class="result-overlay" id="resultOverlay">
+
+    <div class="result-box">
+
+        <div class="result-icon" id="resultIcon">
+            🏆
+        </div>
+
+        <div class="result-title" id="resultTitle">
+            X برنده شد!
+        </div>
+
+        <div class="result-subtitle" id="resultSubtitle">
+            چه بازی خفنی! 🔥
+        </div>
+
+        <div class="result-scores">
+
+            <div class="result-score">
+                <span>❌ X</span>
+                <strong id="resultScoreX">0</strong>
+            </div>
+
+            <div class="result-score">
+                <span>🤝 مساوی</span>
+                <strong id="resultScoreDraw">0</strong>
+            </div>
+
+            <div class="result-score">
+                <span>⭕ O</span>
+                <strong id="resultScoreO">0</strong>
+            </div>
+
+        </div>
+
+        <div class="result-buttons">
+
+            <button
+                class="result-btn play-again"
+                id="playAgainBtn"
+            >
+                🔄 بازی مجدد
+            </button>
+
+            <button
+                class="result-btn home"
+                id="resultHomeBtn"
+            >
+                🏠 منوی اصلی
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<script>
+
+/* =========================================================
+   STATE
+========================================================= */
+
+const homeScreen =
+    document.getElementById("homeScreen");
+
+const gameScreen =
+    document.getElementById("gameScreen");
+
+const cells =
+    document.querySelectorAll(".cell");
+
+const statusText =
+    document.getElementById("statusText");
+
+const scoreXElement =
+    document.getElementById("scoreX");
+
+const scoreOElement =
+    document.getElementById("scoreO");
+
+const scoreDrawElement =
+    document.getElementById("scoreDraw");
+
+const playerXCard =
+    document.getElementById("playerXCard");
+
+const playerOCard =
+    document.getElementById("playerOCard");
+
+const playerXName =
+    document.getElementById("playerXName");
+
+const playerOName =
+    document.getElementById("playerOName");
+
+const playerXAvatar =
+    document.getElementById("playerXAvatar");
+
+const playerOAvatar =
+    document.getElementById("playerOAvatar");
+
+const resultOverlay =
+    document.getElementById("resultOverlay");
+
+const resultIcon =
+    document.getElementById("resultIcon");
+
+const resultTitle =
+    document.getElementById("resultTitle");
+
+const resultSubtitle =
+    document.getElementById("resultSubtitle");
+
+const resultScoreX =
+    document.getElementById("resultScoreX");
+
+const resultScoreO =
+    document.getElementById("resultScoreO");
+
+const resultScoreDraw =
+    document.getElementById("resultScoreDraw");
+
+const speedInfo =
+    document.getElementById("speedInfo");
+
+const speedTimer =
+    document.getElementById("speedTimer");
+
+
+let currentPlayer = "X";
+let gameActive = true;
+
+let gameMode = "twoPlayer";
+
+let playerSymbol = "X";
+let computerSymbol = "O";
+
+let difficulty = "easy";
+
+let computerThinking = false;
+
+let speedMode = false;
+let speedSeconds = 10;
+let speedInterval = null;
+
+
+/* =========================================================
+   PROFILE DATA
+========================================================= */
+
+let profileX =
+    JSON.parse(
+        localStorage.getItem("xoProfileX")
+    ) || {
+        name:"بازیکن X",
+        avatar:"❌"
+    };
+
+let profileO =
+    JSON.parse(
+        localStorage.getItem("xoProfileO")
+    ) || {
+        name:"بازیکن O",
+        avatar:"⭕"
+    };
+
+
+/* =========================================================
+   SCORE
+========================================================= */
+
+let scoreX =
+    Number(localStorage.getItem("scoreX")) || 0;
+
+let scoreO =
+    Number(localStorage.getItem("scoreO")) || 0;
+
+let scoreDraw =
+    Number(localStorage.getItem("scoreDraw")) || 0;
+
+
+/* =========================================================
+   SETTINGS
+========================================================= */
+
+let soundEnabled =
+    localStorage.getItem("soundEnabled") !== "false";
+
+let vibrationEnabled =
+    localStorage.getItem("vibrationEnabled") !== "false";
+
+let effectsEnabled =
+    localStorage.getItem("effectsEnabled") !== "false";
+
+let currentTheme =
+    localStorage.getItem("xoTheme") || "neon";
+
+
+/* =========================================================
+   ACHIEVEMENTS
+========================================================= */
+
+const achievementData = [
+
+    {
+        id:"firstWin",
+        icon:"🏆",
+        title:"اولین پیروزی",
+        desc:"اولین بازی خودت را ببر."
+    },
+
+    {
+        id:"fiveWins",
+        icon:"🔥",
+        title:"داغ شدی!",
+        desc:"۵ برد ثبت کن."
+    },
+
+    {
+        id:"tenWins",
+        icon:"👑",
+        title:"سلطان XO",
+        desc:"۱۰ برد ثبت کن."
+    },
+
+    {
+        id:"twentyWins",
+        icon:"💎",
+        title:"افسانه‌ای",
+        desc:"۲۰ برد ثبت کن."
+    },
+
+    {
+        id:"draw",
+        icon:"🤝",
+        title:"صلح‌طلب",
+        desc:"یک بازی مساوی داشته باش."
+    },
+
+    {
+        id:"speedWin",
+        icon:"⚡",
+        title:"سریع و خشن",
+        desc:"در حالت سرعتی برنده شو."
+    },
+
+    {
+        id:"total25",
+        icon:"🎮",
+        title:"بازیکن حرفه‌ای",
+        desc:"۲۵ بازی انجام بده."
+    },
+
+    {
+        id:"total50",
+        icon:"🚀",
+        title:"بزن بریم!",
+        desc:"۵۰ بازی انجام بده."
+    }
+
+];
+
+
+/* =========================================================
+   THEME
+========================================================= */
+
+function applyTheme(){
+
+    if(currentTheme === "neon"){
+
+        document.body.removeAttribute(
+            "data-theme"
+        );
+
+    }else{
+
+        document.body.dataset.theme =
+            currentTheme;
+
+    }
+
+}
+
+applyTheme();
+
+
+/* =========================================================
+   SCORE UPDATE
+========================================================= */
+
+function updateScore(){
+
+    scoreXElement.textContent =
+        scoreX;
+
+    scoreOElement.textContent =
+        scoreO;
+
+    scoreDrawElement.textContent =
+        scoreDraw;
+
+}
+
+updateScore();
+
+
+/* =========================================================
+   PROFILE UPDATE
+========================================================= */
+
+function updateProfiles(){
+
+    if(gameMode === "computer"){
+
+        playerXName.textContent = "X";
+        playerOName.textContent = "O";
+
+        playerXAvatar.textContent = "❌";
+        playerOAvatar.textContent = "⭕";
+
+        return;
+
+    }
+
+    playerXName.textContent =
+        profileX.name || "بازیکن X";
+
+    playerOName.textContent =
+        profileO.name || "بازیکن O";
+
+    playerXAvatar.textContent =
+        profileX.avatar || "❌";
+
+    playerOAvatar.textContent =
+        profileO.avatar || "⭕";
+
+}
+
+
+/* =========================================================
+   TURN UI
+========================================================= */
+
+function updateTurnUI(){
+
+    playerXCard.classList.toggle(
+        "active",
+        currentPlayer === "X"
+    );
+
+    playerOCard.classList.toggle(
+        "active",
+        currentPlayer === "O"
+    );
+
+}
+
+
+/* =========================================================
+   HOME
+========================================================= */
+
+function showMainHome(){
+
+    homeScreen.innerHTML = `
+
+        <div class="logo">
+            <div class="logo-x">X</div>
+            <div class="logo-o">O</div>
+        </div>
+
+        <h1>XO ARENA</h1>
+
+        <p class="subtitle">
+            آماده‌ای برای رقابت؟ 🎮
+        </p>
+
+        <div class="menu">
+
+            <button
+                class="menu-btn primary"
+                id="twoPlayerBtn"
+            >
+                <span>👥</span>
+
+                <div>
+                    <strong>دو نفره</strong>
+                    <small>بازی با دوستت</small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn"
+                id="computerBtn"
+            >
+                <span>🤖</span>
+
+                <div>
+                    <strong>بازی با کامپیوتر</strong>
+                    <small>با هوش مصنوعی رقابت کن</small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn"
+                id="speedBtn"
+            >
+                <span>⚡</span>
+
+                <div>
+                    <strong>حالت سرعتی</strong>
+                    <small>زمان محدود برای هر حرکت</small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn"
+                id="profileBtn"
+            >
+                <span>👤</span>
+
+                <div>
+                    <strong>پروفایل بازیکنان</strong>
+                    <small>اسم و آواتار دو نفره</small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn"
+                id="statsBtn"
+            >
+                <span>🏆</span>
+
+                <div>
+                    <strong>آمار و دستاوردها</strong>
+                    <small>رکوردها و افتخارات</small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn"
+                id="settingsBtn"
+            >
+                <span>⚙️</span>
+
+                <div>
+                    <strong>تنظیمات</strong>
+                    <small>شخصی‌سازی بازی</small>
+                </div>
+            </button>
+
+        </div>
+
+        <div class="version">
+            XO ARENA • v3.0
+        </div>
+    `;
+
+    bindHomeButtons();
+
+}
+
+
+function bindHomeButtons(){
+
+    document
+        .getElementById("twoPlayerBtn")
+        .onclick = startTwoPlayer;
+
+    document
+        .getElementById("computerBtn")
+        .onclick = showComputerSetup;
+
+    document
+        .getElementById("speedBtn")
+        .onclick = showSpeedSetup;
+
+    document
+        .getElementById("profileBtn")
+        .onclick = showProfiles;
+
+    document
+        .getElementById("statsBtn")
+        .onclick = showStats;
+
+    document
+        .getElementById("settingsBtn")
+        .onclick = showSettings;
+
+}
+
+
+/* =========================================================
+   TWO PLAYER
+========================================================= */
+
+function startTwoPlayer(){
+
+    gameMode = "twoPlayer";
+    speedMode = false;
+
+    homeScreen.style.display = "none";
+    gameScreen.style.display = "block";
+
+    updateProfiles();
+    restartGame();
+
+}
+
+
+/* =========================================================
+   PROFILES
+========================================================= */
+
+function showProfiles(){
+
+    const avatars = [
+        "😀","😎","🤠","🥶",
+        "😈","👽","🤖","👻",
+        "🐼","🦊","🐯","🦁",
+        "🐸","🐵","💀","🔥",
+        "⚡","💎","🎮","👑"
+    ];
+
+    const xAvatars =
+        avatars.map(
+            a => `
+                <button
+                    class="avatar-option ${
+                        profileX.avatar === a
+                            ? "selected"
+                            : ""
+                    }"
+                    data-x-avatar="${a}"
+                >
+                    ${a}
+                </button>
+            `
+        ).join("");
+
+    const oAvatars =
+        avatars.map(
+            a => `
+                <button
+                    class="avatar-option ${
+                        profileO.avatar === a
+                            ? "selected"
+                            : ""
+                    }"
+                    data-o-avatar="${a}"
+                >
+                    ${a}
+                </button>
+            `
+        ).join("");
+
+
+    homeScreen.innerHTML = `
+
+        <div class="logo">
+            <div class="logo-x">X</div>
+            <div class="logo-o">O</div>
+        </div>
+
+        <h1>پروفایل‌ها</h1>
+
+        <p class="subtitle">
+            مخصوص بازی دو نفره 👥
+        </p>
+
+        <div class="profile-editor">
+
+            <div class="profile-label">
+                نام بازیکن X
+            </div>
+
+            <input
+                class="profile-input"
+                id="profileXInput"
+                maxlength="16"
+                value="${escapeHtml(profileX.name)}"
+                placeholder="نام بازیکن X"
+            >
+
+            <div class="profile-label">
+                آواتار X
+            </div>
+
+            <div class="avatar-row">
+                ${xAvatars}
+            </div>
+
+            <div class="profile-label">
+                نام بازیکن O
+            </div>
+
+            <input
+                class="profile-input"
+                id="profileOInput"
+                maxlength="16"
+                value="${escapeHtml(profileO.name)}"
+                placeholder="نام بازیکن O"
+            >
+
+            <div class="profile-label">
+                آواتار O
+            </div>
+
+            <div class="avatar-row">
+                ${oAvatars}
+            </div>
+
+            <button
+                class="menu-btn primary"
+                id="saveProfilesBtn"
+            >
+                <span>💾</span>
+
+                <div>
+                    <strong>ذخیره پروفایل‌ها</strong>
+                    <small>تغییرات ذخیره می‌شوند</small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn"
+                id="profileBackBtn"
+            >
+                <span>🏠</span>
+
+                <div>
+                    <strong>برگشت</strong>
+                    <small>منوی اصلی</small>
+                </div>
+            </button>
+
+        </div>
+
+    `;
+
+
+    document
+        .querySelectorAll("[data-x-avatar]")
+        .forEach(
+            button => {
+
+                button.onclick = () => {
+
+                    profileX.avatar =
+                        button.dataset.xAvatar;
+
+                    showProfiles();
+
+                };
+
+            }
+        );
+
+
+    document
+        .querySelectorAll("[data-o-avatar]")
+        .forEach(
+            button => {
+
+                button.onclick = () => {
+
+                    profileO.avatar =
+                        button.dataset.oAvatar;
+
+                    showProfiles();
+
+                };
+
+            }
+        );
+
+
+    document
+        .getElementById("saveProfilesBtn")
+        .onclick = () => {
+
+            const x =
+                document.getElementById(
+                    "profileXInput"
+                ).value.trim();
+
+            const o =
+                document.getElementById(
+                    "profileOInput"
+                ).value.trim();
+
+            if(x){
+                profileX.name = x;
+            }
+
+            if(o){
+                profileO.name = o;
+            }
+
+            localStorage.setItem(
+                "xoProfileX",
+                JSON.stringify(profileX)
+            );
+
+            localStorage.setItem(
+                "xoProfileO",
+                JSON.stringify(profileO)
+            );
+
+            showMainHome();
+
+        };
+
+
+    document
+        .getElementById("profileBackBtn")
+        .onclick = showMainHome;
+
+}
+
+
+/* =========================================================
+   COMPUTER SETUP
+========================================================= */
+
+function showComputerSetup(){
+
+    homeScreen.innerHTML = `
+
+        <div class="logo">
+            <div class="logo-x">X</div>
+            <div class="logo-o">O</div>
+        </div>
+
+        <h1>بازی با کامپیوتر</h1>
+
+        <p class="subtitle">
+            با کدوم مهره بازی می‌کنی؟ 🤖
+        </p>
+
+        <div class="menu">
+
+            <button
+                class="menu-btn primary"
+                id="playAsX"
+            >
+                <span>❌</span>
+
+                <div>
+                    <strong>بازی با X</strong>
+                    <small>شما اول بازی می‌کنید</small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn"
+                id="playAsO"
+            >
+                <span>⭕</span>
+
+                <div>
+                    <strong>بازی با O</strong>
+                    <small>کامپیوتر اول بازی می‌کند</small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn"
+                id="computerBack"
+            >
+                <span>🏠</span>
+
+                <div>
+                    <strong>برگشت</strong>
+                    <small>منوی اصلی</small>
+                </div>
+            </button>
+
+        </div>
+    `;
+
+
+    document
+        .getElementById("playAsX")
+        .onclick =
+        () => chooseDifficulty("X");
+
+
+    document
+        .getElementById("playAsO")
+        .onclick =
+        () => chooseDifficulty("O");
+
+
+    document
+        .getElementById("computerBack")
+        .onclick =
+        showMainHome;
+
+}
+
+
+/* =========================================================
+   DIFFICULTY
+========================================================= */
+
+function chooseDifficulty(symbol){
+
+    playerSymbol = symbol;
+
+    computerSymbol =
+        symbol === "X"
+            ? "O"
+            : "X";
+
+
+    homeScreen.innerHTML = `
+
+        <div class="logo">
+            <div class="logo-x">X</div>
+            <div class="logo-o">O</div>
+        </div>
+
+        <h1>درجه سختی</h1>
+
+        <p class="subtitle">
+            حریف رو انتخاب کن 😈
+        </p>
+
+        <div class="menu">
+
+            <button
+                class="menu-btn primary"
+                id="easyMode"
+            >
+                <span>🟢</span>
+
+                <div>
+                    <strong>آسان</strong>
+                    <small>حرکت‌های شانسی</small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn"
+                id="mediumMode"
+            >
+                <span>🟡</span>
+
+                <div>
+                    <strong>متوسط</strong>
+                    <small>حریف باهوش‌تر</small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn"
+                id="hardMode"
+            >
+                <span>🔴</span>
+
+                <div>
+                    <strong>سخت</strong>
+                    <small>تقریباً شکست‌ناپذیر</small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn"
+                id="difficultyBack"
+            >
+                <span>↩️</span>
+
+                <div>
+                    <strong>برگشت</strong>
+                    <small>انتخاب مهره</small>
+                </div>
+            </button>
+
+        </div>
+    `;
+
+
+    document
+        .getElementById("easyMode")
+        .onclick =
+        () => startComputerGame("easy");
+
+
+    document
+        .getElementById("mediumMode")
+        .onclick =
+        () => startComputerGame("medium");
+
+
+    document
+        .getElementById("hardMode")
+        .onclick =
+        () => startComputerGame("hard");
+
+
+    document
+        .getElementById("difficultyBack")
+        .onclick =
+        showComputerSetup;
+
+}
+
+
+/* =========================================================
+   COMPUTER GAME
+========================================================= */
+
+function startComputerGame(selected){
+
+    difficulty = selected;
+    gameMode = "computer";
+    speedMode = false;
+
+    homeScreen.style.display = "none";
+    gameScreen.style.display = "block";
+
+    updateProfiles();
+    restartGame();
+
+}
+
+
+/* =========================================================
+   SPEED MODE
+========================================================= */
+
+function showSpeedSetup(){
+
+    homeScreen.innerHTML = `
+
+        <div class="logo">
+            <div class="logo-x">X</div>
+            <div class="logo-o">O</div>
+        </div>
+
+        <h1>حالت سرعتی ⚡</h1>
+
+        <p class="subtitle">
+            هر بازیکن فقط زمان محدودی دارد!
+        </p>
+
+        <div class="menu">
+
+            <button
+                class="menu-btn primary"
+                id="speed10"
+            >
+                <span>⚡</span>
+
+                <div>
+                    <strong>۱۰ ثانیه</strong>
+                    <small>سریع و هیجانی</small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn"
+                id="speed5"
+            >
+                <span>🔥</span>
+
+                <div>
+                    <strong>۵ ثانیه</strong>
+                    <small>برای حرفه‌ای‌ها</small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn"
+                id="speedBack"
+            >
+                <span>🏠</span>
+
+                <div>
+                    <strong>برگشت</strong>
+                    <small>منوی اصلی</small>
+                </div>
+            </button>
+
+        </div>
+    `;
+
+
+    document
+        .getElementById("speed10")
+        .onclick =
+        () => startSpeedGame(10);
+
+
+    document
+        .getElementById("speed5")
+        .onclick =
+        () => startSpeedGame(5);
+
+
+    document
+        .getElementById("speedBack")
+        .onclick =
+        showMainHome;
+
+}
+
+
+function startSpeedGame(seconds){
+
+    gameMode = "twoPlayer";
+    speedMode = true;
+    speedSeconds = seconds;
+
+    homeScreen.style.display = "none";
+    gameScreen.style.display = "block";
+
+    updateProfiles();
+
+    restartGame();
+
+}
+
+
+/* =========================================================
+   SPEED TIMER
+========================================================= */
+
+function startTimer(){
+
+    stopTimer();
+
+    if(!speedMode || !gameActive){
+        speedInfo.style.display = "none";
+        return;
+    }
+
+    speedInfo.style.display = "block";
+
+    let remaining = speedSeconds;
+
+    speedTimer.textContent =
+        remaining;
+
+    speedTimer.classList.remove(
+        "speed-danger"
+    );
+
+
+    speedInterval =
+        setInterval(
+            () => {
+
+                remaining--;
+
+                speedTimer.textContent =
+                    remaining;
+
+                if(remaining <= 3){
+
+                    speedTimer.classList.add(
+                        "speed-danger"
+                    );
+
+                }
+
+                if(remaining <= 0){
+
+                    stopTimer();
+
+                    timeoutTurn();
+
+                }
+
+            },
+            1000
+        );
+
+}
+
+
+function stopTimer(){
+
+    if(speedInterval){
+
+        clearInterval(
+            speedInterval
+        );
+
+        speedInterval = null;
+
+    }
+
+}
+
+
+function timeoutTurn(){
+
+    if(!gameActive) return;
+
+    gameActive = false;
+
+    const loser =
+        currentPlayer;
+
+    const winner =
+        loser === "X"
+            ? "O"
+            : "X";
+
+    if(winner === "X"){
+        scoreX++;
+    }else{
+        scoreO++;
+    }
+
+    saveScore();
+    updateScore();
+
+    statusText.textContent =
+        `⏱️ زمان ${loser} تمام شد!`;
+
+    showResult(
+        "timeout",
+        winner
+    );
+
+}
+
+
+/* =========================================================
+   CELL CLICK
+========================================================= */
+
+cells.forEach(
+    (cell,index) => {
+
+        cell.addEventListener(
+            "click",
+            () => {
+
+                if(
+                    cell.textContent !== "" ||
+                    !gameActive ||
+                    computerThinking
+                ){
+                    return;
+                }
+
+                if(
+                    gameMode === "computer" &&
+                    currentPlayer !== playerSymbol
+                ){
+                    return;
+                }
+
+                cell.textContent =
+                    currentPlayer;
+
+                cell.classList.add(
+                    "marked"
+                );
+
+                cellFeedback(
+                    currentPlayer
+                );
+
+                stopTimer();
+
+                if(checkWinner()){
+                    return;
+                }
+
+                switchPlayer();
+
+                updateStatus();
+
+                startTimer();
+
+                if(
+                    gameMode === "computer" &&
+                    currentPlayer === computerSymbol
+                ){
+
+                    computerThinking = true;
+
+                    setTimeout(
+                        computerMove,
+                        450
+                    );
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   SWITCH
+========================================================= */
+
+function switchPlayer(){
+
+    currentPlayer =
+        currentPlayer === "X"
+            ? "O"
+            : "X";
+
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+function updateStatus(){
+
+    let text =
+        `نوبت ${currentPlayer}`;
+
+    if(gameMode === "twoPlayer"){
+
+        if(!speedMode){
+
+            text =
+                currentPlayer === "X"
+                    ? `نوبت ${profileX.name}`
+                    : `نوبت ${profileO.name}`;
+
+        }
+
+    }
+
+    statusText.textContent =
+        text;
+
+    statusText.classList.remove(
+        "status-pop"
+    );
+
+    void statusText.offsetWidth;
+
+    statusText.classList.add(
+        "status-pop"
+    );
+
+    updateTurnUI();
+
+}
+
+
+/* =========================================================
+   COMPUTER
+========================================================= */
+
+function computerMove(){
+
+    computerThinking = false;
+
+    if(!gameActive) return;
+
+    const empty =
+        getEmptyCells();
+
+    if(!empty.length) return;
+
+    let index;
+
+    if(difficulty === "easy"){
+
+        index =
+            getRandomMove();
+
+    }else if(difficulty === "medium"){
+
+        index =
+            getMediumMove();
+
+    }else{
+
+        index =
+            getHardMove();
+
+    }
+
+    cells[index].textContent =
+        computerSymbol;
+
+    cells[index].classList.add(
+        "marked"
+    );
+
+    cellFeedback(
+        computerSymbol
+    );
+
+    if(checkWinner()){
+        return;
+    }
+
+    switchPlayer();
+
+    updateStatus();
+
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+function getEmptyCells(){
+
+    const empty = [];
+
+    cells.forEach(
+        (cell,index) => {
+
+            if(cell.textContent === ""){
+                empty.push(index);
+            }
+
+        }
+    );
+
+    return empty;
+
+}
+
+
+/* =========================================================
+   RANDOM
+========================================================= */
+
+function getRandomMove(){
+
+    const empty =
+        getEmptyCells();
+
+    return empty[
+        Math.floor(
+            Math.random() *
+            empty.length
+        )
+    ];
+
+}
+
+
+/* =========================================================
+   MEDIUM
+========================================================= */
+
+function getMediumMove(){
+
+    const empty =
+        getEmptyCells();
+
+
+    for(const index of empty){
+
+        cells[index].textContent =
+            computerSymbol;
+
+        if(hasWinner(computerSymbol)){
+
+            cells[index].textContent =
+                "";
+
+            return index;
+
+        }
+
+        cells[index].textContent =
+            "";
+
+    }
+
+
+    for(const index of empty){
+
+        cells[index].textContent =
+            playerSymbol;
+
+        if(hasWinner(playerSymbol)){
+
+            cells[index].textContent =
+                "";
+
+            return index;
+
+        }
+
+        cells[index].textContent =
+            "";
+
+    }
+
+
+    if(cells[4].textContent === ""){
+        return 4;
+    }
+
+
+    const corners =
+        [0,2,6,8];
+
+    const available =
+        corners.filter(
+            i => cells[i].textContent === ""
+        );
+
+    if(available.length){
+
+        return available[
+            Math.floor(
+                Math.random() *
+                available.length
+            )
+        ];
+
+    }
+
+    return getRandomMove();
+
+}
+
+
+/* =========================================================
+   HARD
+========================================================= */
+
+function getHardMove(){
+
+    let bestScore = -Infinity;
+    let bestMove;
+
+    const empty =
+        getEmptyCells();
+
+    for(const index of empty){
+
+        cells[index].textContent =
+            computerSymbol;
+
+        const score =
+            minimax(false);
+
+        cells[index].textContent =
+            "";
+
+        if(score > bestScore){
+
+            bestScore = score;
+            bestMove = index;
+
+        }
+
+    }
+
+    return bestMove;
+
+}
+
+
+function minimax(isMax){
+
+    if(hasWinner(computerSymbol)){
+        return 10;
+    }
+
+    if(hasWinner(playerSymbol)){
+        return -10;
+    }
+
+    const empty =
+        getEmptyCells();
+
+    if(!empty.length){
+        return 0;
+    }
+
+    if(isMax){
+
+        let best = -Infinity;
+
+        for(const index of empty){
+
+            cells[index].textContent =
+                computerSymbol;
+
+            const score =
+                minimax(false);
+
+            cells[index].textContent =
+                "";
+
+            best =
+                Math.max(
+                    best,
+                    score
+                );
+
+        }
+
+        return best;
+
+    }
+
+
+    let best = Infinity;
+
+    for(const index of empty){
+
+        cells[index].textContent =
+            playerSymbol;
+
+        const score =
+            minimax(true);
+
+        cells[index].textContent =
+            "";
+
+        best =
+            Math.min(
+                best,
+                score
+            );
+
+    }
+
+    return best;
+
+}
+
+
+/* =========================================================
+   WINNER
+========================================================= */
+
+const winningCombinations = [
+
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+
+    [0,4,8],
+    [2,4,6]
+
+];
+
+
+function hasWinner(symbol){
+
+    return winningCombinations.some(
+        combo => {
+
+            const [a,b,c] =
+                combo;
+
+            return(
+                cells[a].textContent === symbol &&
+                cells[b].textContent === symbol &&
+                cells[c].textContent === symbol
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CHECK
+========================================================= */
+
+function checkWinner(){
+
+    for(
+        const combo
+        of winningCombinations
+    ){
+
+        const [a,b,c] =
+            combo;
+
+        if(
+            cells[a].textContent !== "" &&
+            cells[a].textContent ===
+                cells[b].textContent &&
+            cells[a].textContent ===
+                cells[c].textContent
+        ){
+
+            gameActive = false;
+            computerThinking = false;
+
+            stopTimer();
+
+            cells[a].classList.add("winner");
+            cells[b].classList.add("winner");
+            cells[c].classList.add("winner");
+
+            if(currentPlayer === "X"){
+                scoreX++;
+            }else{
+                scoreO++;
+            }
+
+            saveScore();
+            updateScore();
+
+            unlockAchievements();
+
+            statusText.textContent =
+                `🎉 ${currentPlayer} برنده شد!`;
+
+            winFeedback();
+
+            setTimeout(
+                () => {
+
+                    showResult(
+                        "win",
+                        currentPlayer
+                    );
+
+                },
+                450
+            );
+
+            return true;
+
+        }
+
+    }
+
+
+    const draw =
+        [...cells].every(
+            cell =>
+                cell.textContent !== ""
+        );
+
+
+    if(draw){
+
+        gameActive = false;
+        computerThinking = false;
+
+        stopTimer();
+
+        scoreDraw++;
+
+        saveScore();
+        updateScore();
+
+        unlockAchievements();
+
+        statusText.textContent =
+            "🤝 بازی مساوی شد!";
+
+        drawFeedback();
+
+        setTimeout(
+            () => {
+
+                showResult(
+                    "draw"
+                );
+
+            },
+            450
+        );
+
+        return true;
+
+    }
+
+    return false;
+
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+function showResult(
+    type,
+    winner
+){
+
+    if(type === "win"){
+
+        resultIcon.textContent =
+            winner === "X"
+                ? "❌"
+                : "⭕";
+
+        let winnerName =
+            winner === "X"
+                ? profileX.name
+                : profileO.name;
+
+        if(gameMode === "computer"){
+            winnerName =
+                winner === playerSymbol
+                    ? "شما"
+                    : "کامپیوتر";
+        }
+
+        resultTitle.textContent =
+            `🏆 ${winnerName} برنده شد!`;
+
+        resultSubtitle.textContent =
+            speedMode
+                ? "⚡ سرعت حرف اول رو زد!"
+                : "چه بازی خفنی! 🔥";
+
+    }
+
+    else if(type === "timeout"){
+
+        resultIcon.textContent =
+            "⏱️";
+
+        resultTitle.textContent =
+            `${winner} برنده شد!`;
+
+        resultSubtitle.textContent =
+            "زمان حریف تموم شد! ⚡";
+
+    }
+
+    else{
+
+        resultIcon.textContent =
+            "🤝";
+
+        resultTitle.textContent =
+            "بازی مساوی شد!";
+
+        resultSubtitle.textContent =
+            "هیچ‌کس کوتاه نیومد 😎";
+
+    }
+
+
+    resultScoreX.textContent =
+        scoreX;
+
+    resultScoreO.textContent =
+        scoreO;
+
+    resultScoreDraw.textContent =
+        scoreDraw;
+
+    resultOverlay.classList.add(
+        "show"
+    );
+
+}
+
+
+/* =========================================================
+   CLOSE RESULT
+========================================================= */
+
+function closeResult(){
+
+    resultOverlay.classList.remove(
+        "show"
+    );
+
+}
+
+
+/* =========================================================
+   RESTART
+========================================================= */
+
+function restartGame(){
+
+    closeResult();
+
+    stopTimer();
+
+    computerThinking = false;
+
+    cells.forEach(
+        cell => {
+
+            cell.textContent = "";
+
+            cell.classList.remove(
+                "marked",
+                "winner"
+            );
+
+        }
+    );
+
+    currentPlayer = "X";
+
+    gameActive = true;
+
+    speedTimer.classList.remove(
+        "speed-danger"
+    );
+
+    updateProfiles();
+
+    updateStatus();
+
+    if(speedMode){
+
+        speedTimer.textContent =
+            speedSeconds;
+
+        startTimer();
+
+    }else{
+
+        speedInfo.style.display =
+            "none";
+
+    }
+
+
+    if(
+        gameMode === "computer" &&
+        computerSymbol === "X"
+    ){
+
+        computerThinking = true;
+
+        setTimeout(
+            computerMove,
+            500
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   SAVE
+========================================================= */
+
+function saveScore(){
+
+    localStorage.setItem(
+        "scoreX",
+        scoreX
+    );
+
+    localStorage.setItem(
+        "scoreO",
+        scoreO
+    );
+
+    localStorage.setItem(
+        "scoreDraw",
+        scoreDraw
+    );
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+function resetAllScores(){
+
+    if(
+        !confirm(
+            "⚠️ مطمئنی می‌خوای تمام آمار پاک بشه؟"
+        )
+    ){
+        return false;
+    }
+
+    scoreX = 0;
+    scoreO = 0;
+    scoreDraw = 0;
+
+    saveScore();
+    updateScore();
+
+    return true;
+
+}
+
+
+/* =========================================================
+   STATS + ACHIEVEMENTS
+========================================================= */
+
+function showStats(){
+
+    const total =
+        scoreX +
+        scoreO +
+        scoreDraw;
+
+    const winRate =
+        total
+            ? Math.round(
+                ((scoreX + scoreO) / total)
+                * 100
+            )
+            : 0;
+
+
+    const achievements =
+        achievementData.map(
+            achievement => {
+
+                const unlocked =
+                    isAchievementUnlocked(
+                        achievement.id
+                    );
+
+                return `
+
+                    <div
+                        class="achievement ${
+                            unlocked
+                                ? "unlocked"
+                                : ""
+                        }"
+                    >
+
+                        <div class="achievement-icon">
+                            ${achievement.icon}
+                        </div>
+
+                        <div class="achievement-info">
+
+                            <strong>
+                                ${achievement.title}
+                            </strong>
+
+                            <small>
+                                ${achievement.desc}
+                            </small>
+
+                        </div>
+
+                        <div class="achievement-status">
+                            ${unlocked ? "✅" : "🔒"}
+                        </div>
+
+                    </div>
+
+                `;
+
+            }
+        ).join("");
+
+
+    homeScreen.innerHTML = `
+
+        <div class="logo">
+            <div class="logo-x">X</div>
+            <div class="logo-o">O</div>
+        </div>
+
+        <h1>آمار بازی</h1>
+
+        <p class="subtitle">
+            رکوردها و دستاوردهای تو 🏆
+        </p>
+
+        <div class="menu">
+
+            <div class="menu-btn">
+                <span>❌</span>
+
+                <div>
+                    <strong>بردهای X</strong>
+                    <small>${scoreX} برد</small>
+                </div>
+            </div>
+
+            <div class="menu-btn">
+                <span>⭕</span>
+
+                <div>
+                    <strong>بردهای O</strong>
+                    <small>${scoreO} برد</small>
+                </div>
+            </div>
+
+            <div class="menu-btn">
+                <span>🤝</span>
+
+                <div>
+                    <strong>مساوی‌ها</strong>
+                    <small>${scoreDraw} بازی</small>
+                </div>
+            </div>
+
+            <div class="menu-btn">
+                <span>🎮</span>
+
+                <div>
+                    <strong>مجموع بازی‌ها</strong>
+                    <small>${total} بازی</small>
+                </div>
+            </div>
+
+            <div class="menu-btn">
+                <span>📊</span>
+
+                <div>
+                    <strong>درصد برد</strong>
+                    <small>${winRate}٪</small>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="margin-top:20px;text-align:right;">
+
+            <div
+                style="
+                    color:#cbd5e1;
+                    font-size:14px;
+                    font-weight:bold;
+                    margin-bottom:9px;
+                "
+            >
+                🏅 دستاوردها
+            </div>
+
+            <div class="achievement-list">
+                ${achievements}
+            </div>
+
+        </div>
+
+        <div class="menu" style="margin-top:12px;">
+
+            <button
+                class="menu-btn danger"
+                id="resetStatsBtn"
+            >
+                <span>🗑️</span>
+
+                <div>
+                    <strong>ریست کل آمار</strong>
+                    <small>پاک کردن رکوردها</small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn primary"
+                id="statsBackBtn"
+            >
+                <span>🏠</span>
+
+                <div>
+                    <strong>برگشت</strong>
+                    <small>منوی اصلی</small>
+                </div>
+            </button>
+
+        </div>
+
+    `;
+
+
+    document
+        .getElementById("resetStatsBtn")
+        .onclick = () => {
+
+            if(resetAllScores()){
+                showStats();
+            }
+
+        };
+
+
+    document
+        .getElementById("statsBackBtn")
+        .onclick =
+        showMainHome;
+
+}
+
+
+/* =========================================================
+   ACHIEVEMENT LOGIC
+========================================================= */
+
+function isAchievementUnlocked(id){
+
+    const total =
+        scoreX +
+        scoreO +
+        scoreDraw;
+
+    switch(id){
+
+        case "firstWin":
+            return scoreX + scoreO >= 1;
+
+        case "fiveWins":
+            return scoreX + scoreO >= 5;
+
+        case "tenWins":
+            return scoreX + scoreO >= 10;
+
+        case "twentyWins":
+            return scoreX + scoreO >= 20;
+
+        case "draw":
+            return scoreDraw >= 1;
+
+        case "speedWin":
+            return localStorage.getItem(
+                "speedWin"
+            ) === "true";
+
+        case "total25":
+            return total >= 25;
+
+        case "total50":
+            return total >= 50;
+
+        default:
+            return false;
+
+    }
+
+}
+
+
+function unlockAchievements(){
+
+    const total =
+        scoreX +
+        scoreO +
+        scoreDraw;
+
+    if(speedMode){
+
+        localStorage.setItem(
+            "speedWin",
+            "true"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   SETTINGS
+========================================================= */
+
+function showSettings(){
+
+    homeScreen.innerHTML = `
+
+        <div class="logo">
+            <div class="logo-x">X</div>
+            <div class="logo-o">O</div>
+        </div>
+
+        <h1>تنظیمات</h1>
+
+        <p class="subtitle">
+            بازی رو مطابق سلیقه خودت تنظیم کن ⚙️
+        </p>
+
+        <div class="menu">
+
+            <button
+                class="menu-btn"
+                id="soundSetting"
+            >
+                <span>
+                    ${soundEnabled ? "🔊" : "🔇"}
+                </span>
+
+                <div>
+                    <strong>صدای بازی</strong>
+                    <small>
+                        ${soundEnabled ? "فعال" : "غیرفعال"}
+                    </small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn"
+                id="vibrationSetting"
+            >
+                <span>📳</span>
+
+                <div>
+                    <strong>ویبره</strong>
+                    <small>
+                        ${vibrationEnabled ? "فعال" : "غیرفعال"}
+                    </small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn"
+                id="effectsSetting"
+            >
+                <span>✨</span>
+
+                <div>
+                    <strong>افکت‌ها</strong>
+                    <small>
+                        ${effectsEnabled ? "فعال" : "غیرفعال"}
+                    </small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn primary"
+                id="themeSetting"
+            >
+                <span>🎨</span>
+
+                <div>
+                    <strong>انتخاب تم</strong>
+                    <small>ظاهر کامل بازی</small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn"
+                id="resetSettings"
+            >
+                <span>🔄</span>
+
+                <div>
+                    <strong>بازنشانی تنظیمات</strong>
+                    <small>حالت پیش‌فرض</small>
+                </div>
+            </button>
+
+            <button
+                class="menu-btn"
+                id="settingsBackBtn"
+            >
+                <span>🏠</span>
+
+                <div>
+                    <strong>برگشت</strong>
+                    <small>منوی اصلی</small>
+                </div>
+            </button>
+
+        </div>
+    `;
+
+
+    document
+        .getElementById("soundSetting")
+        .onclick = () => {
+
+            soundEnabled =
+                !soundEnabled;
+
+            localStorage.setItem(
+                "soundEnabled",
+                soundEnabled
+            );
+
+            showSettings();
+
+        };
+
+
+    document
+        .getElementById("vibrationSetting")
+        .onclick = () => {
+
+            vibrationEnabled =
+                !vibrationEnabled;
+
+            localStorage.setItem(
+                "vibrationEnabled",
+                vibrationEnabled
+            );
+
+            if(
+                vibrationEnabled &&
+                navigator.vibrate
+            ){
+                navigator.vibrate(80);
+            }
+
+            showSettings();
+
+        };
+
+
+    document
+        .getElementById("effectsSetting")
+        .onclick = () => {
+
+            effectsEnabled =
+                !effectsEnabled;
+
+            localStorage.setItem(
+                "effectsEnabled",
+                effectsEnabled
+            );
+
+            showSettings();
+
+        };
+
+
+    document
+        .getElementById("themeSetting")
+        .onclick =
+        showThemeSelector;
+
+
+    document
+        .getElementById("resetSettings")
+        .onclick = () => {
+
+            soundEnabled = true;
+            vibrationEnabled = true;
+            effectsEnabled = true;
+
+            currentTheme = "neon";
+
+            localStorage.setItem(
+                "soundEnabled",
+                "true"
+            );
+
+            localStorage.setItem(
+                "vibrationEnabled",
+                "true"
+            );
+
+            localStorage.setItem(
+                "effectsEnabled",
+                "true"
+            );
+
+            localStorage.setItem(
+                "xoTheme",
+                "neon"
+            );
+
+            applyTheme();
+            showSettings();
+
+        };
+
+
+    document
+        .getElementById("settingsBackBtn")
+        .onclick =
+        showMainHome;
+
+}
+
+
+/* =========================================================
+   THEME SELECTOR
+   FIXED BACK BUTTON
+========================================================= */
+
+function showThemeSelector(){
+
+    const themes = [
+
+        {
+            id:"neon",
+            name:"Neon Blue",
+            className:"theme-neon"
+        },
+
+        {
+            id:"cyber-red",
+            name:"Cyber Red",
+            className:"theme-red"
+        },
+
+        {
+            id:"matrix",
+            name:"Matrix Green",
+            className:"theme-matrix"
+        },
+
+        {
+            id:"purple",
+            name:"Purple Galaxy",
+            className:"theme-purple"
+        },
+
+        {
+            id:"ocean",
+            name:"Ocean",
+            className:"theme-ocean"
+        },
+
+        {
+            id:"sunset",
+            name:"Sunset",
+            className:"theme-sunset"
+        },
+
+        {
+            id:"gold",
+            name:"Royal Gold",
+            className:"theme-gold"
+        }
+
+    ];
+
+
+    homeScreen.innerHTML = `
+
+        <div class="logo">
+            <div class="logo-x">X</div>
+            <div class="logo-o">O</div>
+        </div>
+
+        <h1>انتخاب تم</h1>
+
+        <p class="subtitle">
+            ظاهر مورد علاقت رو انتخاب کن 🎨
+        </p>
+
+        <div class="theme-grid">
+
+            ${
+                themes.map(
+                    theme => `
+
+                        <button
+                            class="
+                                theme-card
+                                ${theme.className}
+                                ${
+                                    currentTheme === theme.id
+                                        ? "active"
+                                        : ""
+                                }
+                            "
+                            data-theme-choice="${theme.id}"
+                        >
+
+                            <div class="theme-preview"></div>
+
+                            <div class="theme-name">
+                                ${theme.name}
+                            </div>
+
+                            <div class="theme-check">
+                                ✓
+                            </div>
+
+                        </button>
+
+                    `
+                ).join("")
+            }
+
+        </div>
+
+        <div
+            class="menu"
+            style="margin-top:12px;"
+        >
+
+            <button
+                class="menu-btn primary"
+                id="themeBackBtn"
+            >
+
+                <span>⚙️</span>
+
+                <div>
+                    <strong>
+                        برگشت به تنظیمات
+                    </strong>
+
+                    <small>
+                        تغییرات ذخیره شده‌اند
+                    </small>
+                </div>
+
+            </button>
+
+        </div>
+    `;
+
+
+    document
+        .querySelectorAll(
+            "[data-theme-choice]"
+        )
+        .forEach(
+            card => {
+
+                card.onclick = () => {
+
+                    currentTheme =
+                        card.dataset.themeChoice;
+
+                    localStorage.setItem(
+                        "xoTheme",
+                        currentTheme
+                    );
+
+                    applyTheme();
+
+                    showThemeSelector();
+
+                };
+
+            }
+        );
+
+
+    /*
+       مهم:
+       این دکمه مستقیم showSettings را صدا می‌زند
+       تا مشکل برگشت تم دوباره ایجاد نشود.
+    */
+
+    document
+        .getElementById("themeBackBtn")
+        .onclick =
+        showSettings;
+
+}
+
+
+/* =========================================================
+   BACK TO MENU
+========================================================= */
+
+document
+    .getElementById("backToMenuBtn")
+    .onclick = () => {
+
+        stopTimer();
+
+        closeResult();
+
+        gameScreen.style.display =
+            "none";
+
+        homeScreen.style.display =
+            "block";
+
+        showMainHome();
+
+    };
+
+
+/* =========================================================
+   RESULT BUTTONS
+========================================================= */
+
+document
+    .getElementById("playAgainBtn")
+    .onclick = () => {
+
+        closeResult();
+        restartGame();
+
+    };
+
+
+document
+    .getElementById("resultHomeBtn")
+    .onclick = () => {
+
+        stopTimer();
+        closeResult();
+
+        gameScreen.style.display =
+            "none";
+
+        homeScreen.style.display =
+            "block";
+
+        showMainHome();
+
+    };
+
+
+/* =========================================================
+   GAME BUTTONS
+========================================================= */
+
+document
+    .getElementById("restartButton")
+    .onclick =
+    restartGame;
+
+
+document
+    .getElementById("resetScoreButton")
+    .onclick = () => {
+
+        if(resetAllScores()){
+            restartGame();
+        }
+
+    };
+
+
+/* =========================================================
+   AUDIO
+========================================================= */
+
+let audioContext = null;
+
+
+function getAudioContext(){
+
+    if(!audioContext){
+
+        const AudioCtx =
+            window.AudioContext ||
+            window.webkitAudioContext;
+
+        if(!AudioCtx){
+            return null;
+        }
+
+        audioContext =
+            new AudioCtx();
+
+    }
+
+    return audioContext;
+
+}
+
+
+function playSound(
+    frequency=500,
+    duration=.08,
+    type="sine",
+    volume=.05
+){
+
+    if(!soundEnabled) return;
+
+    try{
+
+        const ctx =
+            getAudioContext();
+
+        if(!ctx) return;
+
+        if(ctx.state === "suspended"){
+            ctx.resume();
+        }
+
+        const oscillator =
+            ctx.createOscillator();
+
+        const gain =
+            ctx.createGain();
+
+        oscillator.type =
+            type;
+
+        oscillator.frequency.setValueAtTime(
+            frequency,
+            ctx.currentTime
+        );
+
+        gain.gain.setValueAtTime(
+            0,
+            ctx.currentTime
+        );
+
+        gain.gain.linearRampToValueAtTime(
+            volume,
+            ctx.currentTime + .01
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            .001,
+            ctx.currentTime + duration
+        );
+
+        oscillator.connect(gain);
+        gain.connect(ctx.destination);
+
+        oscillator.start();
+
+        oscillator.stop(
+            ctx.currentTime + duration
+        );
+
+    }catch(e){}
+
+}
+
+
+function playCellSound(symbol){
+
+    playSound(
+        symbol === "X"
+            ? 520
+            : 700,
+        .08,
+        "sine",
+        .06
+    );
+
+}
+
+
+function playWinSound(){
+
+    playSound(523,.12,"sine",.07);
+
+    setTimeout(
+        () => playSound(
+            659,
+            .12,
+            "sine",
+            .07
+        ),
+        100
+    );
+
+    setTimeout(
+        () => playSound(
+            784,
+            .2,
+            "sine",
+            .08
+        ),
+        200
+    );
+
+}
+
+
+function playDrawSound(){
+
+    playSound(
+        440,
+        .12,
+        "triangle",
+        .05
+    );
+
+    setTimeout(
+        () => playSound(
+            330,
+            .2,
+            "triangle",
+            .05
+        ),
+        120
+    );
+
+}
+
+
+/* =========================================================
+   VIBRATION
+========================================================= */
+
+function vibrate(pattern=40){
+
+    if(
+        !vibrationEnabled ||
+        !navigator.vibrate
+    ){
+        return;
+    }
+
+    try{
+        navigator.vibrate(pattern);
+    }catch(e){}
+
+}
+
+
+function cellFeedback(symbol){
+
+    playCellSound(symbol);
+    vibrate(35);
+
+}
+
+
+function winFeedback(){
+
+    playWinSound();
+
+    vibrate([
+        80,
+        50,
+        120,
+        50,
+        180
+    ]);
+
+}
+
+
+function drawFeedback(){
+
+    playDrawSound();
+
+    vibrate([
+        70,
+        50,
+        70
+    ]);
+
+}
+
+
+/* =========================================================
+   HTML ESCAPE
+========================================================= */
+
+function escapeHtml(text){
+
+    return String(text)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+/* =========================================================
+   INIT
+========================================================= */
+
+showMainHome();
+
+</script>
+<script>
+    window.addEventListener("load", function () {
+        setTimeout(function () {
+            const splash = document.getElementById("xoSplash");
+
+            if (splash) {
+                splash.classList.add("hide");
+
+                setTimeout(function () {
+                    splash.remove();
+                }, 800);
+            }
+        }, 4000);
+    });
+</script>
+</body>
+
+              </html>
+        radial-gradient(
+            circle at 50% -10%,
+            var(--bg1) 0%,
+            var(--bg2) 35%,
+            var(--bg3) 72%,
+            var(--bg4) 100%
+        );
+
+    color:white;
+
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    transition:
+        background .45s ease;
+}
+
+/* =========================================================
+   THEME
+========================================================= */
+
+:root{
+    --bg1:#263f7a;
+    --bg2:#111a38;
+    --bg3:#070b18;
+    --bg4:#03050c;
+
+    --primary:#2563eb;
+    --primary2:#7c3aed;
+
+    --x:#60a5fa;
+    --o:#f472b6;
+
+    --accent:#facc15;
+
+    --text:#fff;
+    --muted:#94a3b8;
+
+    --glass:rgba(255,255,255,.065);
+    --glass-hover:rgba(255,255,255,.12);
+    --border:rgba(255,255,255,.11);
+
+    --shadow:rgba(0,0,0,.4);
+}
+
+body[data-theme="cyber-red"]{
+    --bg1:#7f1d1d;
+    --bg2:#3b1111;
+    --bg3:#160707;
+    --bg4:#050101;
+
+    --primary:#dc2626;
+    --primary2:#f97316;
+
+    --x:#fb7185;
+    --o:#fbbf24;
+    --accent:#fb923c;
+}
+
+body[data-theme="matrix"]{
+    --bg1:#064e3b;
+    --bg2:#052e25;
+    --bg3:#031711;
+    --bg4:#010806;
+
+    --primary:#059669;
+    --primary2:#16a34a;
+
+    --x:#4ade80;
+    --o:#a3e635;
+    --accent:#22c55e;
+}
+
+body[data-theme="purple"]{
+    --bg1:#581c87;
+    --bg2:#281044;
+    --bg3:#11051e;
+    --bg4:#05020a;
+
+    --primary:#9333ea;
+    --primary2:#ec4899;
+
+    --x:#c084fc;
+    --o:#f0abfc;
+    --accent:#e879f9;
+}
+
+body[data-theme="ocean"]{
+    --bg1:#075985;
+    --bg2:#083344;
+    --bg3:#031b29;
+    --bg4:#010b12;
+
+    --primary:#0284c7;
+    --primary2:#06b6d4;
+
+    --x:#38bdf8;
+    --o:#67e8f9;
+    --accent:#22d3ee;
+}
+
+body[data-theme="sunset"]{
+    --bg1:#9a3412;
+    --bg2:#4a1620;
+    --bg3:#1c0710;
+    --bg4:#070205;
+
+    --primary:#ea580c;
+    --primary2:#db2777;
+
+    --x:#fb923c;
+    --o:#f472b6;
+    --accent:#fbbf24;
+}
+
+body[data-theme="gold"]{
+    --bg1:#6b4b0a;
+    --bg2:#302105;
+    --bg3:#110c02;
+    --bg4:#050401;
+
+    --primary:#ca8a04;
+    --primary2:#a16207;
+
+    --x:#facc15;
+    --o:#fde68a;
+    --accent:#f59e0b;
+}
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+    color:white;
+    border:0;
+    outline:0;
+    transition:
+        transform .12s ease,
+        filter .15s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+}
+
+button:active{
+    transform:scale(.96);
+}
+
+.app{
+    width:100%;
+    max-width:430px;
+    position:relative;
+}
+
+/* =========================================================
+   HOME
+========================================================= */
+
+.home-screen{
+    width:100%;
+    text-align:center;
+    position:relative;
+    padding-bottom:70px;
+}
+
+.logo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    direction:ltr;
+    margin-bottom:8px;
+}
+
+.logo-x,
+.logo-o{
+    font-size:68px;
+    font-weight:900;
+    line-height:1;
+}
+
+.logo-x{
+    color:var(--x);
+    text-shadow:
+        0 0 12px var(--x),
+        0 0 35px var(--x);
+}
+
+.logo-o{
+    color:var(--o);
+    text-shadow:
+        0 0 12px var(--o),
+        0 0 35px var(--o);
+}
+
+.home-screen h1{
+    font-size:32px;
+    font-weight:900;
+    letter-spacing:4px;
+    margin-bottom:7px;
+}
+
+.subtitle{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.menu-btn{
+    width:100%;
+    min-height:68px;
+
+    display:flex;
+    align-items:center;
+
+    gap:13px;
+    padding:11px 15px;
+
+    border:1px solid var(--border);
+    border-radius:19px;
+
+    background:var(--glass);
+
+    text-align:right;
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+}
+
+.menu-btn:hover{
+    background:var(--glass-hover);
+    transform:translateY(-2px);
+}
+
+.menu-btn > span{
+    width:40px;
+    min-width:40px;
+    text-align:center;
+    font-size:27px;
+}
+
+.menu-btn div{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    flex:1;
+}
+
+.menu-btn strong{
+    font-size:16px;
+}
+
+.menu-btn small{
+    color:var(--muted);
+    font-size:11px;
+}
+
+.menu-btn.primary{
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary2)
+        );
+
+    box-shadow:
+        0 10px 30px
+        color-mix(
+            in srgb,
+            var(--primary) 30%,
+            transparent
+        );
+}
+
+.menu-btn.danger{
+    background:rgba(239,68,68,.07);
+    border-color:rgba(239,68,68,.25);
+}
+
+/* =========================================================
+   CREATOR / DONATION BOX
+========================================================= */
+
+.creator-box{
+    position:fixed;
+    left:12px;
+    bottom:12px;
+
+    z-index:50;
+
+    min-width:94px;
+    padding:8px 11px;
+
+    border-radius:14px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    border:
+        1px solid rgba(255,255,255,.13);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    text-decoration:none;
+    color:white;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.25),
+        inset 0 0 20px rgba(255,255,255,.025);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.creator-box:hover{
+    transform:translateY(-3px);
+    border-color:rgba(96,165,250,.5);
+
+    box-shadow:
+        0 10px 35px rgba(37,99,235,.22),
+        0 0 18px rgba(96,165,250,.12);
+}
+
+.creator-label{
+    display:block;
+    color:#64748b;
+    font-size:8px;
+    margin-bottom:2px;
+    text-align:left;
+}
+
+.creator-name{
+    display:block;
+    direction:ltr;
+    text-align:left;
+
+    font-family:
+        "Trebuchet MS",
+        "Arial Black",
+        Arial,
+        sans-serif;
+
+    font-size:14px;
+    font-weight:900;
+    letter-spacing:2px;
+
+    color:#dbeafe;
+
+    text-shadow:
+        0 0 5px var(--x),
+        0 0 12px rgba(96,165,250,.65);
+
+    animation:
+        creatorNeon 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes creatorNeon{
+    from{
+        opacity:.78;
+        text-shadow:
+            0 0 4px var(--x),
+            0 0 9px rgba(96,165,250,.45);
+    }
+
+    to{
+        opacity:1;
+        text-shadow:
+            0 0 5px var(--x),
+            0 0 15px var(--x),
+            0 0 24px rgba(96,165,250,.35);
+    }
+}
+
+.version{
+    margin-top:22px;
+    color:#64748b;
+    font-size:10px;
+}
+
+/* =========================================================
+   GAME
+========================================================= */
+
+.game{
+    width:100%;
+    max-width:430px;
+    display:none;
+    text-align:center;
+}
+
+.game-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:15px;
+}
+
+.back-button{
+    padding:9px 12px;
+    border-radius:13px;
+
+    background:var(--glass);
+    border:1px solid var(--border);
+
+    font-size:12px;
+    font-weight:bold;
+}
+
+.game-title{
+    font-size:29px;
+    font-weight:900;
+    letter-spacing:5px;
+}
+
+/* =========================================================
+   PLAYER PROFILES
+========================================================= */
+
+.players{
+    width:100%;
+
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+
+    align-items:center;
+
+    gap:6px;
+    margin-bottom:15px;
+}
+
+.player-card{
+    position:relative;
+    min-width:0;
+
+    display:flex;
+    align-items:center;
+
+    gap:7px;
+    padding:9px;
+
+    border-radius:17px;
+
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:blur(12px);
+
+    transition:.25s ease;
+}
+
+.player-card.active{
+    transform:translateY(-3px) scale(1.02);
+    background:rgba(255,255,255,.1);
+}
+
+.player-x.active{
+    border-color:rgba(96,165,250,.7);
+    box-shadow:0 0 18px rgba(96,165,250,.22);
+}
+
+.player-o.active{
+    border-color:rgba(244,114,182,.7);
+    box-shadow:0 0 18px rgba(244,114,182,.22);
+}
+
+.player-avatar{
+    width:35px;
+    height:35px;
+    min-width:35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:11px;
+
+    background:rgba(255,255,255,.08);
+
+    font-size:18px;
+}
+
+.player-info{
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:2px;
+    overflow:hidden;
+}
+
+.player-info strong{
+    width:100%;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+
+    font-size:11px;
+}
+
+.player-info small{
+    color:#94a3b8;
+    font-size:8px;
+}
+
+.player-crown{
+    position:absolute;
+    top:-8px;
+    right:-4px;
+
+    font-size:15px;
+
+    opacity:0;
+    transform:scale(.5);
+
+    transition:.25s ease;
+}
+
+.player-card.winner-player .player-crown{
+    opacity:1;
+    transform:scale(1);
+}
+
+.vs{
+    color:#64748b;
+    font-size:9px;
+    font-weight:900;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status{
+    font-size:16px;
+    color:#cbd5e1;
+    margin-bottom:15px;
+}
+
+.status.status-pop{
+    animation:statusPop .35s ease;
+}
+
+@keyframes statusPop{
+    0%{
+        transform:scale(.75);
+        opacity:.3;
+    }
+
+    70%{
+        transform:scale(1.1);
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* =========================================================
+   SCORE
+========================================================= */
+
+.scoreboard{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    margin-bottom:16px;
+}
+
+.score{
+    background:var(--glass);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:9px 4px;
+    backdrop-filter:blur(10px);
+}
+
+.score span{
+    display:block;
+    font-size:11px;
+    color:#cbd5e1;
+    margin-bottom:3px;
+}
+
+.score strong{
+    font-size:22px;
+}
+
+/* =========================================================
+   BOARD
+========================================================= */
+
+.board{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:9px;
+}
+
+.cell{
+    aspect-ratio:1;
+
+    border:1px solid var(--border);
+    border-radius:17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.1),
+            rgba(255,255,255,.035)
+        );
+
+    color:white;
+
+    font-size:53px;
+    font-weight:900;
+
+    box-shadow:
+        0 7px 20px var(--shadow);
+}
+
+.cell:hover{
+    background:var(--glass-hover);
+}
+
+.cell.marked{
+    animation:
+        cellPop .28s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes cellPop{
+    0%{
+        transform:scale(.45);
+        opacity:.1;
+    }
+
+    65%{
+        transform:scale(1.12);
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.cell.winner{
+    border:2px solid var(--accent);
+
+    background:
+        radial-gradient(
+            circle,
+            color-mix(
+                in srgb,
+                var(--accent) 35%,
+                transparent
+            ),
+            transparent
+        );
+
+    animation:
+        winnerGlow .65s
+        ease-in-out
+        infinite alternate;
+}
+
+@keyframes winnerGlow{
+    from{
+        box-shadow:0 0 7px var(--accent);
+    }
+
+    to{
+        box-shadow:
+            0 0 17px var(--accent),
+            0 0 40px
+            color-mix(
+                in srgb,
+                var(--accent) 45%,
+                transparent
+            );
+    }
+}
+
+/* =========================================================
+   GAME BUTTONS
+========================================================= */
+
+.restart,
+.reset-score{
+    width:100%;
+    margin-top:10px;
+    padding:13px;
+    border-radius:15px;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.restart{
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary2)
+        );
+}
+
+.reset-score{
+    background:var(--glass);
+    border:1px solid var(--border);
+}
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.result-overlay{
+    position:fixed;
+    inset:0;
+
+    z-index:999;
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    padding:16px;
+
+    background:rgba(2,5,15,.78);
+
+    backdrop-filter:blur(12px);
+}
+
+.result-overlay.show{
+    display:flex;
+    animation:overlayIn .3s ease;
+}
+
+@keyframes overlayIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+.result-box{
+    width:100%;
+    max-width:350px;
+
+    text-align:center;
+
+    padding:28px 20px 20px;
+
+    border:1px solid var(--border);
+    border-radius:27px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30,41,80,.96),
+            rgba(10,15,35,.98)
+        );
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.65);
+
+    animation:
+        resultBoxIn .45s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes resultBoxIn{
+    0%{
+        transform:scale(.65) translateY(40px);
+        opacity:0;
+    }
+
+    70%{
+        transform:scale(1.04) translateY(-4px);
+    }
+
+    100%{
+        transform:scale(1) translateY(0);
+        opacity:1;
+    }
+}
+
+.result-icon{
+    font-size:58px;
+    margin-bottom:12px;
+}
+
+.result-title{
+    font-size:27px;
+    font-weight:900;
+    margin-bottom:6px;
+}
+
+.result-subtitle{
+    color:var(--muted);
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.result-scores{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:7px;
+    margin-bottom:18px;
+}
+
+.result-score{
+    padding:10px 4px;
+    border-radius:15px;
+    background:rgba(255,255,255,.06);
+    border:1px solid var(--border);
+}
+
+.result-score span{
+    display:block;
+    color:var(--muted);
+    font-size:10px;
+    margin-bottom:4px;
+}
+
+.result-score strong{
+    font-size:21px;
+}
+
+.result-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+}
+
+.result-btn{
+    width:100%;
+    padding:14px;
+    border-radius:15px;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.result-btn.play-again{
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary2)
+        );
+}
+
+.result-btn.home{
+    background:var(--glass);
+    border:1px solid var(--border);
+}
+
+/* =========================================================
+   PROFILE EDITOR
+========================================================= */
+
+.profile-editor{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.profile-label{
+    color:var(--muted);
+    font-size:11px;
+    text-align:right;
+    margin:3px 3px -3px;
+}
+
+.profile-input{
+    width:100%;
+    padding:13px 14px;
+
+    border-radius:15px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    outline:none;
+
+    background:rgba(255,255,255,.06);
+
+    color:white;
+
+    font-size:14px;
+
+    text-align:right;
+}
+
+.profile-input:focus{
+    border-color:rgba(96,165,250,.65);
+    box-shadow:0 0 18px rgba(96,165,250,.12);
+}
+
+.avatar-row{
+    display:flex;
+    gap:7px;
+    overflow-x:auto;
+    padding:3px 1px 7px;
+}
+
+.avatar-option{
+    min-width:45px;
+    height:45px;
+
+    border-radius:13px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid var(--border);
+
+    font-size:23px;
+}
+
+.avatar-option.selected{
+    border:2px solid var(--accent);
+    box-shadow:0 0 14px
+        color-mix(
+            in srgb,
+            var(--accent) 35%,
+            transparent
+        );
+}
+
+/* =========================================================
+   SPEED MODE
+========================================================= */
+
+.speed-info{
+    padding:12px;
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239,68,68,.1),
+            rgba(124,58,237,.08)
+        );
+
+    border:1px solid rgba(255,255,255,.09);
+
+    margin-bottom:10px;
+}
+
+.speed-timer{
+    font-size:30px;
+    font-weight:900;
+    margin-bottom:4px;
+}
+
+.speed-label{
+    color:var(--muted);
+    font-size:10px;
+}
+
+.speed-danger{
+    color:#fb7185;
+    animation:timerPulse .45s infinite alternate;
+}
+
+@keyframes timerPulse{
+    to{
+        transform:scale(1.05);
+    }
+}
+
+/* =========================================================
+   ACHIEVEMENTS
+========================================================= */
+
+.achievement-list{
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+}
+
+.achievement{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:11px;
+
+    border-radius:16px;
+
+    background:var(--glass);
+    border:1px solid var(--border);
+}
+
+.achievement-icon{
+    width:39px;
+    height:39px;
+
+    min-width:39px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.07);
+
+    font-size:21px;
+
+    filter:grayscale(1);
+    opacity:.45;
+}
+
+.achievement.unlocked .achievement-icon{
+    filter:none;
+    opacity:1;
+
+    box-shadow:
+        0 0 15px
+        color-mix(
+            in srgb,
+            var(--accent) 30%,
+            transparent
+        );
+}
+
+.achievement-info{
+    flex:1;
+    min-width:0;
+    text-align:right;
+}
+
+.achievement-info strong{
+    display:block;
+    font-size:12px;
+    margin-bottom:3px;
+}
+
+.achievement-info small{
+    color:var(--muted);
+    font-size:9px;
+}
+
+.achievement-status{
+    font-size:10px;
+}
+
+/* =========================================================
+   THEME
+========================================================= */
+
+.theme-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:9px;
+}
+
+.theme-card{
+    position:relative;
+
+    min-height:94px;
+
+    border:1px solid var(--border);
+    border-radius:17px;
+
+    padding:9px;
+
+    background:rgba(255,255,255,.05);
+}
+
+.theme-card.active{
+    border:2px solid var(--accent);
+
+    box-shadow:
+        0 0 18px
+        color-mix(
+            in srgb,
+            var(--accent) 30%,
+            transparent
+        );
+}
+
+.theme-preview{
+    height:45px;
+    border-radius:12px;
+    margin-bottom:7px;
+}
+
+.theme-name{
+    font-size:11px;
+    font-weight:bold;
+}
+
+.theme-check{
+    position:absolute;
+    top:5px;
+    left:6px;
+
+    width:20px;
+    height:20px;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--accent);
+    color:#111;
+
+    font-size:11px;
+    font-weight:bold;
+}
+
+.theme-card.active .theme-check{
+    display:flex;
+}
+
+.theme-neon .theme-preview{
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+}
+
+.theme-red .theme-preview{
+    background:linear-gradient(135deg,#dc2626,#f97316);
+}
+
+.theme-matrix .theme-preview{
+    background:linear-gradient(135deg,#059669,#16a34a);
+}
+
+.theme-purple .theme-preview{
+    background:linear-gradient(135deg,#9333ea,#ec4899);
+}
+
+.theme-ocean .theme-preview{
+    background:linear-gradient(135deg,#0284c7,#06b6d4);
+}
+
+.theme-sunset .theme-preview{
+    background:linear-gradient(135deg,#ea580c,#db2777);
+}
+
+.theme-gold .theme-preview{
+    background:linear-gradient(135deg,#ca8a04,#f59e0b);
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:430px){
+
+    body{
+        padding:10px;
+        align-items:flex-start;
+        padding-top:15px;
+    }
+
+    .app{
+        max-width:100%;
+    }
+
+    .logo-x,
+    .logo-o{
+        font-size:58px;
+    }
+
+    .home-screen h1{
+        font-size:28px;
+        letter-spacing:3px;
+    }
+
+    .subtitle{
+        font-size:12px;
+        margin-bottom:19px;
+    }
+
+    .menu-btn{
+        min-height:62px;
+        border-radius:17px;
+        padding:9px 12px;
+    }
+
+    .menu-btn > span{
+        width:35px;
+        min-width:35px;
+        font-size:24px;
+    }
+
+    .menu-btn strong{
+        font-size:14px;
+    }
+
+    .menu-btn small{
+        font-size:10px;
+    }
+
+    .game-title{
+        font-size:26px;
+    }
+
+    .cell{
+        font-size:46px;
+        border-radius:15px;
+    }
+
+    .player-card{
+        padding:8px 7px;
+    }
+
+    .player-avatar{
+        width:32px;
+        height:32px;
+        min-width:32px;
+        font-size:17px;
+    }
+
+    .creator-box{
+        left:8px;
+        bottom:8px;
+        padding:7px 9px;
+        min-width:88px;
+    }
+
+    .creator-name{
+        font-size:12px;
+        letter-spacing:1.7px;
+    }
+
+    .creator-label{
+        font-size:7px;
+    }
+}
+
+</style>
 
 </head>
 
