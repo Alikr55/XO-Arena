@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:theme="@style/AppTheme"
-        android:label="XO Arena"
-        android:usesCleartextTraffic="false"
-        android:resizeableActivity="true">
+    android:theme="@style/AppTheme"
+    android:label="XO Arena"
+    android:icon="@drawable/icon_xo"
+    android:roundIcon="@drawable/icon_xo"
+    android:usesCleartextTraffic="false"
+    android:resizeableActivity="true">
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
